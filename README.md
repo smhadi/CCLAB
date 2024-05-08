@@ -4,8 +4,6 @@ This is our lab project where we are going to be using Python to iomplement a pa
 ## CFG
 line → expression exit_command
 
-line → UserIn VAR '=' expression exit_command
-
 line → exit_command
 
 line → line exit_command
@@ -21,8 +19,6 @@ expression → term '-' expression
 
 expression → term
 
-expression → VAR
-
 expression → term UserIn
 
 
@@ -32,8 +28,6 @@ factor → primary UserIn
 
 factor → primary
 
-factor → VAR
-
 
 term → factor
 
@@ -42,8 +36,6 @@ term → factor '*' term
 term → factor '/' term
 
 term → factor UserIn
-
-term → VAR
 
 
 primary → number
@@ -58,7 +50,6 @@ exit_command → EXIT
 Line:
 
 - An expression followed by an exit command
-- An input variable followed by an exit command
 - An exit command
 - An exit command
 - A line followed by an expression and an exit command
@@ -69,7 +60,6 @@ Expression:
 - A term followed by a + and another expression
 - A term followed by a - and another expression
 - A term
-- A variable
 - A term followed by a user input
 
 Factor:
@@ -77,7 +67,6 @@ Factor:
 - A primary expression that is raised to the power of another factor
 - A primary expression followed by a user input
 - A primary expression
-- A variable
 
 Term:
 
@@ -85,7 +74,6 @@ Term:
 - A factor multiplied by another term
 - A factor divided by another term
 - A factor followed by user input
-- A variable
 
 
 Primary:
